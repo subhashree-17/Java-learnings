@@ -1,7 +1,5 @@
-package Exception;
-
+package com.javalearnings.Exception;
 import java.util.Scanner;
-
 public class Division {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

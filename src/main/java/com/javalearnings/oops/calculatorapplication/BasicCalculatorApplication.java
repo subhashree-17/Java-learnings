@@ -1,16 +1,49 @@
 package com.javalearnings.oops.calculatorapplication;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BasicCalculatorApplication {
 
+    private static ArrayList<CalculatorDTO> calculatorDTOS = new ArrayList<>();
+    static BasicCalculator basicCalculator = new BasicCalculator();
+
+   static  Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args){
 
-        Scanner sc = new Scanner(System.in);
+        BasicCalculatorApplication basicCalculatorApplication = new BasicCalculatorApplication();
+        while(true){
+            System.out.println(" Enter your option ");
+            int option = sc.nextInt();
 
-        System.out.println(" Enter your operation like ADD|SUB|MUL|DIV ::  ");
+        switch (option) {
 
+            case 1:
+                System.out.println(" Enter your operation like ADD|SUB|MUL|DIV ::  ");
+
+                CalculatorDTO calculatorDTO = basicCalculatorApplication.extracted();
+                calculatorDTOS.add(calculatorDTO);
+                basicCalculator.display(calculatorDTO);
+                break;
+            case 2:
+                for (CalculatorDTO dto : calculatorDTOS) {
+                    basicCalculator.display(dto);
+                }
+                break;
+            default:
+
+    }
+}
+
+
+
+    }
+
+    private  CalculatorDTO extracted() {
+        sc.nextLine();
         String operation = sc.nextLine();
+
         System.out.println(" Enter your operand 1");
         Long a = sc.nextLong();
         System.out.println(" Enter your operand 2");
@@ -21,7 +54,6 @@ public class BasicCalculatorApplication {
 
         CalculatorDTO calculatorDTO = new CalculatorDTO(a,b,operation);
 
-        BasicCalculator basicCalculator = new BasicCalculator();
 
         switch(operation.toUpperCase()){
 
@@ -45,7 +77,6 @@ public class BasicCalculatorApplication {
             System.out.println(" not feasible to perform this operation  "+operation.toLowerCase());
         }
 
-        basicCalculator.display(calculatorDTO);
-
+ return calculatorDTO;
     }
 }

@@ -22,9 +22,9 @@ public class DigitCount {
         Integer count  =0;
 
         while(number >0){
-            int r = number % 6;
+            int r = number % 10;
             System.out.println(" number::  "+number+" remainder:: "+r);
-            number = number /6;
+            number = number /10;
             System.out.println(" number::  "+number);
             count++;
         }

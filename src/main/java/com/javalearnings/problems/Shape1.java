@@ -1,4 +1,4 @@
 package com.javalearnings.problems;
 
-public class Shape1 extends Main {
+public class Shape1 extends ShapeMain {
 }

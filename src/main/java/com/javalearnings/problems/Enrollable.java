@@ -41,7 +41,7 @@ class Student implements Enrollable {
 
     @Override
     public void enrollInCourse(Course course) {
-        course.enrollStudent(this); // Enrolls the student in the course
+        course.enrollStudent(this); 
     }
 }
 
